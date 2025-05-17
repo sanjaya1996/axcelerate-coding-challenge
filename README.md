@@ -111,6 +111,34 @@ yarn storybook
 
 Then open [http://localhost:6006](http://localhost:6006) or the URL shown in your terminal in your browser.
 
+## 📁 Folder Structure
+
+The project follows a modular and scalable folder structure for clarity and maintainability:
+
+```text
+src/
+├── components/                  #Reusable UI components
+│   ├── Component.tsx            # Component implementation
+│   ├── Component.styles.ts      # Styled-components or style module
+│   ├── Component.stories.tsx    # Storybook stories for the component
+│   └── Component.test.tsx       # Unit tests for the component
+
+├── data/                        # Static or mock data
+│   └── students.ts              # Example student data (can add more as needed)
+
+├── helpers/                     # Utility functions and helpers
+│   └── array/
+│       ├── index.ts             # Array-related utility functions
+│       └── index.test.ts        # Tests for array helpers
+
+├── pages/                       # Page-level components/views
+│   └── Home/                    # Example: Home page
+│       ├── index.tsx            # Home page implementation
+│       └── Home.styles.ts       # Styles specific to Home page
+```
+
+> 📌 **Note:** Each module is self-contained. This structure improves scalability, reusability, and testability across the project.
+
 ---
 
 ---
