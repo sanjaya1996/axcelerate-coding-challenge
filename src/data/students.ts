@@ -1,14 +1,19 @@
-export type AttendanceStatus = "attended" | "absent";
+export type AttendanceStatus = "attended" | "absent" | "late" | "unknown";
 
 export type Student = {
   id: number;
   fullName: string;
   email: string;
   profileAvatar?: string;
-  attendanceStatus: "attended" | "absent";
+  attendanceStatus: AttendanceStatus;
 };
 
-export const attendanceStatuses: AttendanceStatus[] = ["attended", "absent"];
+export const attendanceStatuses: AttendanceStatus[] = [
+  "attended",
+  "absent",
+  "late",
+  "unknown",
+];
 
 export const students: Student[] = [
   {
@@ -20,7 +25,7 @@ export const students: Student[] = [
   },
   {
     id: 2,
-    fullName: "Ben Parker",
+    fullName: "Alice Parker",
     email: "ben.parker@example.com",
     profileAvatar: "https://i.pravatar.cc/300/2",
     attendanceStatus: "absent",
@@ -41,7 +46,7 @@ export const students: Student[] = [
   },
   {
     id: 5,
-    fullName: "Eva Green",
+    fullName: "Eva Johnson",
     email: "eva.green@example.com",
     profileAvatar: "https://i.pravatar.cc/300/5",
     attendanceStatus: "absent",
@@ -57,7 +62,7 @@ export const students: Student[] = [
     fullName: "Grace Kim",
     email: "grace.kim@example.com",
     profileAvatar: "https://i.pravatar.cc/300/6",
-    attendanceStatus: "attended",
+    attendanceStatus: "late",
   },
   {
     id: 8,
@@ -71,11 +76,11 @@ export const students: Student[] = [
     fullName: "Ivy Wang",
     email: "ivy.wang@example.com",
     profileAvatar: "https://i.pravatar.cc/300/9",
-    attendanceStatus: "attended",
+    attendanceStatus: "late",
   },
   {
     id: 10,
-    fullName: "Jack Black",
+    fullName: "Karen Black",
     email: "jack.black@example.com",
     profileAvatar: "https://i.pravatar.cc/300/10",
     attendanceStatus: "absent",
@@ -85,14 +90,14 @@ export const students: Student[] = [
     fullName: "Karen White",
     email: "karen.white@example.com",
     profileAvatar: "https://i.pravatar.cc/300/11",
-    attendanceStatus: "attended",
+    attendanceStatus: "late",
   },
   {
     id: 12,
-    fullName: "Leo Messi",
+    fullName: "Nathan Messi",
     email: "leo.messi@example.com",
     profileAvatar: "https://i.pravatar.cc/300/12",
-    attendanceStatus: "attended",
+    attendanceStatus: "late",
   },
   {
     id: 13,
@@ -106,21 +111,21 @@ export const students: Student[] = [
     fullName: "Nathan Drake",
     email: "nathan.drake@example.com",
     profileAvatar: "https://i.pravatar.cc/300/14",
-    attendanceStatus: "attended",
+    attendanceStatus: "late",
   },
   {
     id: 15,
-    fullName: "Olivia Brown",
+    fullName: "Olivia Taylor",
     email: "olivia.brown@example.com",
     profileAvatar: "https://i.pravatar.cc/300/15",
-    attendanceStatus: "absent",
+    attendanceStatus: "unknown",
   },
   {
     id: 16,
-    fullName: "Peter Parker",
+    fullName: "David Parker",
     email: "peter.parker@example.com",
     profileAvatar: "https://i.pravatar.cc/300/16",
-    attendanceStatus: "attended",
+    attendanceStatus: "unknown",
   },
   {
     id: 17,
@@ -134,7 +139,7 @@ export const students: Student[] = [
     fullName: "Rachel Adams",
     email: "rachel.adams@example.com",
     profileAvatar: "https://i.pravatar.cc/300/18",
-    attendanceStatus: "absent",
+    attendanceStatus: "unknown",
   },
   {
     id: 19,
@@ -145,9 +150,9 @@ export const students: Student[] = [
   },
   {
     id: 20,
-    fullName: "Tina Fey",
+    fullName: "Tinalice Fey",
     email: "tina.fey@example.com",
     profileAvatar: "https://i.pravatar.cc/300/5",
-    attendanceStatus: "absent",
+    attendanceStatus: "unknown",
   },
 ];
