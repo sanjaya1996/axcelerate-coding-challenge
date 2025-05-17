@@ -27,9 +27,9 @@ const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
         <span>{title}</span>
         <ToogleIcon>
           {collapsed ? (
-            <FiChevronRight size={20} />
+            <FiChevronRight size={20} data-testid="chevron-right-icon" />
           ) : (
-            <FiChevronDown size={20} />
+            <FiChevronDown size={20} data-testid="chevron-down-icon" />
           )}
         </ToogleIcon>
       </Header>
