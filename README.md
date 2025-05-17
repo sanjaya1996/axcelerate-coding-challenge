@@ -2,6 +2,11 @@
 
 A React project demonstrating reusable components including a collapsible section list, searchable lists, and student list items — all with TypeScript, Storybook documentation, and unit tests.
 
+<p float="left">
+  <img src="public/Screenshot1.png" alt="Screenshot 1" width="48%" />
+  <img src="public/Screenshot2.png" alt="Screenshot 2" width="48%" />
+</p>
+
 ### 🚀 Tech Stack
 
 - **React 19** — UI Library
