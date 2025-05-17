@@ -119,24 +119,25 @@ The project follows a modular and scalable folder structure for clarity and main
 
 ```text
 src/
-├── components/                  #Reusable UI components
-│   ├── Component.tsx            # Component implementation
-│   ├── Component.styles.ts      # Styled-components or style module
-│   ├── Component.stories.tsx    # Storybook stories for the component
-│   └── Component.test.tsx       # Unit tests for the component
+├── components/                          # Reusable UI components
+│   └── ComponentName/                   # Each component has its own folder
+│       ├── ComponentName.tsx            # Component implementation
+│       ├── ComponentName.styles.ts      # Styled-components or style module
+│       ├── ComponentName.stories.tsx    # Storybook stories for the component
+│       └── ComponentName.test.tsx       # Unit tests for the component
 
-├── data/                        # Static or mock data
-│   └── students.ts              # Example student data (can add more as needed)
+├── data/                                # Static or mock data
+│   └── students.ts                      # Example student data
 
-├── helpers/                     # Utility functions and helpers
+├── helpers/                             # Utility functions and helpers
 │   └── array/
-│       ├── index.ts             # Array-related utility functions
-│       └── index.test.ts        # Tests for array helpers
+│       ├── index.ts                     # Array-related utility functions
+│       └── index.test.ts               # Tests for array helpers
 
-├── pages/                       # Page-level components/views
-│   └── Home/                    # Example: Home page
-│       ├── index.tsx            # Home page implementation
-│       └── Home.styles.ts       # Styles specific to Home page
+├── pages/                               # Page-level components/views
+│   └── Home/
+│       ├── index.tsx                    # Home page implementation
+│       └── Home.styles.ts               # Styles specific to Home page
 ```
 
 > 📌 **Note:** Each module is self-contained. This structure improves scalability, reusability, and testability across the project.
