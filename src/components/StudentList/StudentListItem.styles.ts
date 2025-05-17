@@ -20,10 +20,11 @@ const Avatar = styled.img`
 const Info = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 0.15rem;
 `;
 
 const Name = styled.div`
-  fontweight: 600;
+  font-weight: 600;
   fontsize: 1.125rem;
 `;
 

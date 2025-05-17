@@ -18,7 +18,7 @@ const StudentListItem = ({ student }: StudentListItemProps) => {
   return (
     <ItemWrapper>
       <Avatar
-        src={profileAvatar || "https://ui-avatars.com/api/?name=Default+User"}
+        src={profileAvatar || `https://ui-avatars.com/api/?name=${fullName}`}
         alt={fullName}
       />
       <Info>
