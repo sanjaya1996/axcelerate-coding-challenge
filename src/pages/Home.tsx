@@ -6,8 +6,8 @@ import CollapsibleSectionList from "../components/CollapsibleSectionList/Collaps
 import type { Section } from "../components/CollapsibleSectionList/CollapsibleSectionList";
 import { attendanceStatuses, students, type Student } from "../data/students";
 import StudentListItem from "../components/StudentList/StudentListItem";
-import string from "../helpers/students/string/string";
-import array from "../helpers/students/array/array";
+import string from "../helpers/string";
+import array from "../helpers/array";
 
 const PageWrapper = styled.div`
   padding: 2rem;

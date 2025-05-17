@@ -1,4 +1,4 @@
-import array from "./array";
+import array from ".";
 
 type Person = {
   id: number;

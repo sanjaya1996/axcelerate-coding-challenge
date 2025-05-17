@@ -1,4 +1,4 @@
-import string from "./string";
+import string from ".";
 
 describe("string.capitalize", () => {
   it("capitalizes the first letter of a lowercase word", () => {
