@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const SectionWrapper = styled.div`
   margin-bottom: 1.5rem;
@@ -27,6 +27,10 @@ const Content = styled.div`
   padding: 1rem;
   background-color: #fff;
   border-top: 1px solid #eee;
+
+  @media (max-width: 768px) {
+    padding: 1rem 0em 1em 0rem;
+  }
 `;
 
 export { SectionWrapper, Header, Content, ToogleIcon };
