@@ -2,6 +2,19 @@
 
 A React project demonstrating reusable components including a collapsible section list, searchable lists, and student list items — all with TypeScript, Storybook documentation, and unit tests.
 
+### 🚀 Tech Stack
+
+- **React 19** — UI Library
+- **TypeScript** — Static type checking
+- **Styled-components** — CSS-in-JS styling
+- **Vite** — Frontend tooling and dev server
+- **Jest** — JavaScript testing framework
+- **jest-in-case** — Parameterized test cases
+- **React Testing Library** — Testing utilities for React components
+- **Storybook 8** — Component documentation and development environment
+- **ESLint** — Code linting and style checking
+- **Playwright** — End-to-end testing (optional)
+- **Chromatic** — Storybook publishing and visual testing
 ---
 
 ## Getting Started
