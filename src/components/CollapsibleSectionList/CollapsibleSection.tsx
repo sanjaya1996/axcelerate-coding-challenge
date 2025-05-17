@@ -1,6 +1,11 @@
 import React, { useState } from "react";
-import { SectionWrapper, Header, Content } from "./CollapsibleSection.styles";
-
+import {
+  SectionWrapper,
+  Header,
+  Content,
+  ToogleIcon,
+} from "./CollapsibleSection.styles";
+import { FiChevronDown } from "react-icons/fi";
 type CollapsibleSectionProps = {
   title: string;
   children: React.ReactNode;
@@ -18,7 +23,12 @@ const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
 
   return (
     <SectionWrapper>
-      <Header onClick={toggleCollapse}>{title}</Header>
+      <Header onClick={toggleCollapse}>
+        <span>{title}</span>
+        <ToogleIcon>
+          <FiChevronDown size={20} />
+        </ToogleIcon>
+      </Header>
       {!collapsed && <Content>{children}</Content>}
     </SectionWrapper>
   );
