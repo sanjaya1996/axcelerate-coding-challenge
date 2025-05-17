@@ -3,8 +3,11 @@ import SearchField from "../components/SearchField/SearchField";
 import Header from "../components/Header/Header";
 import styled from "styled-components";
 import CollapsibleSectionList from "../components/CollapsibleSectionList/CollapsibleSectionList";
-import { students } from "../data/students";
+import type { Section } from "../components/CollapsibleSectionList/CollapsibleSectionList";
+import { attendanceStatuses, students, type Student } from "../data/students";
 import StudentListItem from "../components/StudentList/StudentListItem";
+import string from "../helpers/students/string/string";
+import array from "../helpers/students/array/array";
 
 const PageWrapper = styled.div`
   padding: 2rem;
@@ -13,31 +16,39 @@ const PageWrapper = styled.div`
 `;
 
 const Home: React.FC = () => {
+  const [renderedStudents, setRenderedStudents] =
+    React.useState<Student[]>(students);
+
   const handleSearch = (searchTerm: string) => {
-    console.log(searchTerm);
+    const searchResult = array.searchList(students, searchTerm, [
+      "fullName",
+      "email",
+    ]);
+    setRenderedStudents(searchResult);
   };
 
-  const renderedStudents = students.slice(0, 10);
-  const renderedStudents2 = students.slice(10, 20);
+  const sectionListMapper: Section<Student>[] = attendanceStatuses.map(
+    (status) => {
+      return {
+        title: string.capitalize(status),
+        items: renderedStudents.filter(
+          (student) => student.attendanceStatus === status
+        ),
+        renderItem: (student) => <StudentListItem student={student} />,
+      };
+    }
+  );
 
   return (
     <PageWrapper>
       <Header />
-      <SearchField value="" onSearch={handleSearch} placeholder="Search" />
-      <CollapsibleSectionList
-        sections={[
-          {
-            title: "List1",
-            items: renderedStudents,
-            renderItem: (student) => <StudentListItem student={student} />,
-          },
-          {
-            title: "List 2",
-            items: renderedStudents2,
-            renderItem: (student) => <StudentListItem student={student} />,
-          },
-        ]}
+      <SearchField
+        value=""
+        onSearch={handleSearch}
+        placeholder="Search"
+        debounceDelay={500}
       />
+      <CollapsibleSectionList sections={sectionListMapper} />
     </PageWrapper>
   );
 };

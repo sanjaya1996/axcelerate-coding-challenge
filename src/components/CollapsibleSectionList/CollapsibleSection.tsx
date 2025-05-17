@@ -5,7 +5,7 @@ import {
   Content,
   ToogleIcon,
 } from "./CollapsibleSection.styles";
-import { FiChevronDown } from "react-icons/fi";
+import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 type CollapsibleSectionProps = {
   title: string;
   children: React.ReactNode;
@@ -26,7 +26,11 @@ const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
       <Header onClick={toggleCollapse}>
         <span>{title}</span>
         <ToogleIcon>
-          <FiChevronDown size={20} />
+          {collapsed ? (
+            <FiChevronRight size={20} />
+          ) : (
+            <FiChevronDown size={20} />
+          )}
         </ToogleIcon>
       </Header>
       {!collapsed && <Content>{children}</Content>}
