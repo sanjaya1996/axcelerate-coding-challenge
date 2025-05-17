@@ -31,8 +31,8 @@ A React project demonstrating reusable components including a collapsible sectio
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/sanjaya1996/axcelerate-coding-challenge.git
+cd axcelerate-coding-challenge
 ```
 
 2. Install dependencies
