@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Home from "./pages/Home";
 
 const Container = styled.div`
   padding: 2rem;
@@ -7,8 +8,7 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
-      <h1>Accelerate Coding Assessment</h1>
-      <p>Start building your components here.</p>
+      <Home />
     </Container>
   );
 }
