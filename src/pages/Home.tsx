@@ -49,7 +49,7 @@ const Home: React.FC = () => {
       <SearchField
         value=''
         onSearch={handleSearch}
-        placeholder='Search'
+        placeholder='Search name or email'
         debounceDelay={500}
       />
       <CollapsibleSectionList sections={sectionListMapper} />
