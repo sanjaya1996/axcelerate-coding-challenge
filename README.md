@@ -7,6 +7,28 @@ A React project demonstrating reusable components including a collapsible sectio
   <img src="public/Screenshot2.png" alt="Screenshot 2" width="48%" />
 </p>
 
+### 🔍 Features
+
+- **Reusable Search Field**  
+  A versatile search field component that can be used anywhere in the application for search functionality.
+
+  - Built-in **debounce mechanism** to prevent unnecessary calls during rapid user input.
+  - Easily configurable for different use cases.
+
+- **Reusable Collapsible Section List**  
+  A flexible component designed to handle collapsible sections with any kind of list data.
+
+  - Can be reused throughout the app for different types of grouped or categorized data.
+  - Each section is collapsible/expandable for better user experience and UI organization.
+
+- **Dynamic Sectioning Based on Attendance Status**  
+  In the current implementation, the collapsible section list automatically creates sections based on a student's `AttendanceStatus`, which includes:
+  - `Attended`
+  - `Absent`
+  - `Late`
+  - `Unknown`  
+    This approach makes the component extensible and easy to adapt for future data-driven grouping.
+
 ### 🚀 Tech Stack
 
 - **React 19** — UI Library
@@ -20,6 +42,7 @@ A React project demonstrating reusable components including a collapsible sectio
 - **ESLint** — Code linting and style checking
 - **Playwright** — End-to-end testing (optional)
 - **Chromatic** — Storybook publishing and visual testing
+
 ---
 
 ## Getting Started
@@ -89,4 +112,5 @@ yarn storybook
 Then open [http://localhost:6006](http://localhost:6006) or the URL shown in your terminal in your browser.
 
 ---
+
 ---
