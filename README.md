@@ -111,6 +111,8 @@ yarn storybook
 
 Then open [http://localhost:6006](http://localhost:6006) or the URL shown in your terminal in your browser.
 
+---
+
 ## 📁 Folder Structure
 
 The project follows a modular and scalable folder structure for clarity and maintainability:
@@ -138,7 +140,3 @@ src/
 ```
 
 > 📌 **Note:** Each module is self-contained. This structure improves scalability, reusability, and testability across the project.
-
----
-
----
