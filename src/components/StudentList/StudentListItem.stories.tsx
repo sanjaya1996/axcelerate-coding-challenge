@@ -16,9 +16,18 @@ const meta: Meta<typeof StudentListItem> = {
   },
   argTypes: {
     student: {
-      control: "object",
-      description:
-        "The student object containing name, email, and optional avatar",
+      description: "Student object containing details to display",
+      table: {
+        type: {
+          summary: `{
+            id: number;
+            fullName: string;
+            email: string;
+            profileAvatar?: string;
+            attendanceStatus: "attended" | "absent";
+          }`,
+        },
+      },
     },
   },
 };

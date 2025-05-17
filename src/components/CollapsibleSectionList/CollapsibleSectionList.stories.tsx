@@ -1,60 +1,65 @@
 import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import CollapsibleSectionList from "./CollapsibleSectionList";
-import type { Section } from "./CollapsibleSectionList";
 
-// Example data type
-type ExampleItem = {
-  id: number;
-  name: string;
+export type Section<T> = {
+  title: string;
+  items: T[];
+  renderItem: (item: T) => React.ReactNode;
 };
 
-// Example sections
-const exampleSections: Section<ExampleItem>[] = [
+type CollapsibleSectionListProps<T> = {
+  sections: Section<T>[];
+};
+
+import type { StoryFn } from "@storybook/react";
+
+const Template: StoryFn<CollapsibleSectionListProps<string>> = (
+  args: CollapsibleSectionListProps<string>
+) => <CollapsibleSectionList {...args} />;
+
+const sampleSections: Section<string>[] = [
   {
-    title: "Group A",
-    items: [
-      { id: 1, name: "Alice" },
-      { id: 2, name: "Alex" },
-    ],
-    renderItem: (item) => <div>{item.name}</div>,
+    title: "Fruits",
+    items: ["Apple", "Banana", "Cherry"],
+    renderItem: (item) => <span>{item}</span>,
   },
   {
-    title: "Group B",
-    items: [
-      { id: 3, name: "Brian" },
-      { id: 4, name: "Bella" },
-    ],
-    renderItem: (item) => <div>{item.name}</div>,
+    title: "Vegetables",
+    items: ["Carrot", "Broccoli", "Lettuce"],
+    renderItem: (item) => <span>{item}</span>,
   },
 ];
 
-const meta: Meta<typeof CollapsibleSectionList> = {
+export default {
   title: "Components/CollapsibleSectionList",
   component: CollapsibleSectionList,
-  tags: ["autodocs"], // enables Storybook Docs addon
   parameters: {
     docs: {
       description: {
-        component:
-          "A reusable collapsible section list component that accepts generic sections with a title and a renderItem function. Each section can be toggled open/closed.",
+        component: `
+**CollapsibleSectionList** is a generic component to render multiple collapsible sections.
+
+### Props
+
+| Name     | Type                        | Description                         |
+| -------- | --------------------------- | --------------------------------- |
+| sections | Section<T>[]                | Array of sections to render       |
+
+Each Section object has:
+- \`title\`: string for the section header.
+- \`items\`: array of items for that section.
+- \`renderItem\`: function to render each item.
+
+This design allows flexible rendering of any type of list items inside collapsible sections.
+        `,
       },
     },
   },
-  argTypes: {
-    sections: {
-      description:
-        "An array of section objects. Each section has a title, an array of items, and a `renderItem` callback.",
-    },
-  },
-};
+  tags: ["autodocs"],
+} as Meta;
 
-export default meta;
-
-type Story = StoryObj<typeof CollapsibleSectionList<ExampleItem>>;
-
-export const Default: Story = {
-  args: {
-    sections: exampleSections,
-  },
+export const Default = Template.bind({});
+Default.args = {
+  sections: sampleSections,
 };
