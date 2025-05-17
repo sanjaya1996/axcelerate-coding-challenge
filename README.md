@@ -60,7 +60,7 @@ npm start
 yarn start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
+Open [http://localhost:5173](http://localhost:5173) or the URL shown in your terminal to view the app in your browser.
 
 ---
 
@@ -86,7 +86,7 @@ npm run storybook
 yarn storybook
 ```
 
-Then open [http://localhost:6006](http://localhost:6006) in your browser.
+Then open [http://localhost:6006](http://localhost:6006) or the URL shown in your terminal in your browser.
 
 ---
 ---
